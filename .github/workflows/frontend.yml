@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - '/frontend'
+      - 'frontend/**'
   workflow_dispatch:
 
 permissions:
@@ -22,3 +22,13 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Deploy static website
         run: az storage blob upload-batch -s ./frontend -d '$web' --account-name resumeweb --overwrite
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/frontend" --profile-name "resumecdn" --name "azurecdnresume" --resource-group "azureresume"
+
+      - name: logout
+        run: |
+              az logout
+        if: always()
