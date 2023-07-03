@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded',(event)=>{getVisitcount();})
-const functionApi ="http://localhost:7071/api/GetresumeCounterhttps://resumecounterazure.azurewebsites.net/api/GetresumeCounter?code=7Esq0IaYSll_a_raBAsztfB868gwWAmlgBxqeEVhTMsdAzFuNF_F0Q==";
+const functionApi ="https://resumecounterazure.azurewebsites.net/api/GetresumeCounter?code=7Esq0IaYSll_a_raBAsztfB868gwWAmlgBxqeEVhTMsdAzFuNF_F0Q==";
 
 const getVisitcount =()=>{
     let count =0;
