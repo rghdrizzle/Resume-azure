@@ -1,0 +1,24 @@
+name: Deploy Frontend to Azure Blob
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '/frontend'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Login to azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Deploy static website
+        run: az storage blob upload-batch -s ./frontend -d '$web' --account-name resumeweb --overwrite
