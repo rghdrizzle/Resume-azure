@@ -1,5 +1,13 @@
 terraform {
+    cloud {
+    organization = "rghdrizzle"
+
+    workspaces {
+      name = "azureresume"
+    }
+  }
   required_providers {
+    
     azurerm = {
       source = "hashicorp/azurerm"
       version = "3.63.0"
@@ -9,6 +17,7 @@ terraform {
 variable "rgname" {}
 variable "rglocation" {}
 variable "AzureResumeConnectionString" {}
+
 provider "azurerm" {
     features {}
 }
@@ -54,3 +63,4 @@ resource "azurerm_linux_function_app" "function" {
   }
 
 }
+
