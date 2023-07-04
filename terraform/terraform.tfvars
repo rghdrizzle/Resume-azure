@@ -1,0 +1,2 @@
+rgname="azureresume"
+rglocation = "westus"
