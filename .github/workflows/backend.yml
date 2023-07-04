@@ -29,4 +29,4 @@ jobs:
             - name: Terraform Init
               run: terraform init -input=false
             - name: Terraform Plan
-              run: terraform plan -input=false -var AzureResumeConnectionString={{ secrets.TF_VAR_AZURERESUMECONNECTIONSTRING}}
+              run: terraform plan -input=false -var AzureResumeConnectionString="{{ secrets.TF_VAR_AZURERESUMECONNECTIONSTRING}}"
