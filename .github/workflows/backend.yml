@@ -11,10 +11,27 @@ permissions:
     contents: read
 
 jobs:
+    changes:
+        runs-on: ubuntu-latest
+        outputs:
+            backend: ${{ steps.filter.outputs.backend }}
+            terraform: ${{ steps.filter.outputs.terraform }}
+        steps:
+        - uses: actions/checkout@v3
+        - uses: dorny/paths-filter@v2
+          id: filter
+          with:
+            filters: |
+                backend:
+                    - 'backend/**'
+                terraform:
+                    - 'terraform/**'
     Terraform:
         defaults:
             run:
                 working-directory: ./terraform
+        needs: changes
+        if: ${{ needs.changes.outputs.terraform == 'true' }}
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -31,4 +48,4 @@ jobs:
             - name: Terraform Plan
               run: terraform plan -input=false -var AzureResumeConnectionString="{{ secrets.TF_VAR_AZURERESUMECONNECTIONSTRING}}"
             - name: Terraform apply
-              run: terraform apply -auto-approve -input=false
+              run: terraform apply -auto-approve -input=false -var AzureResumeConnectionString="{{ secrets.TF_VAR_AZURERESUMECONNECTIONSTRING}}"
