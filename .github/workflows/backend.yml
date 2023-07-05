@@ -12,22 +12,33 @@ permissions:
 
 jobs:
     Terraform:
-        if: github.push == 'terraform/**'
         defaults:
             run:
                 working-directory: ./terraform
         runs-on: ubuntu-latest
         steps:
+            - uses: dorny/paths-filter@v2
+              id: changes
+              with:
+                filters: |
+                    src:
+                        - 'terraform/**'
             - uses: actions/checkout@v3
             - name: Login to azure
+            - if: steps.changes.outputs.src == 'true'
               uses: azure/login@v1
               with:
                 creds: ${{ secrets.AZURE_CREDENTIALS }}
             - name: Setup Terraform
+            - if: steps.changes.outputs.src == 'true'
               uses: hashicorp/setup-terraform@v1
               with:
                 cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
             - name: Terraform Init
+            - if: steps.changes.outputs.src == 'true'
               run: terraform init -input=false
             - name: Terraform Plan
+            - if: steps.changes.outputs.src == 'true'
               run: terraform plan -input=false -var AzureResumeConnectionString="{{ secrets.TF_VAR_AZURERESUMECONNECTIONSTRING}}"
+            - name: Terraform apply
+              run: terraform apply -auto-approve -input=false
