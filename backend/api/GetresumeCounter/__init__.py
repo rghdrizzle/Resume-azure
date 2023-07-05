@@ -28,4 +28,3 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         status_code=200,
         mimetype='application/json'
     )
-        # return("Key: {}, Value: {}".format(key, entity[key]))
