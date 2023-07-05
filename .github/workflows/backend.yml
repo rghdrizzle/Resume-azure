@@ -21,8 +21,8 @@ jobs:
               id: changes
               with:
                 filters: |
-                    src:
-                        - 'terraform/**'
+                  src:
+                      - 'terraform/**'
             - uses: actions/checkout@v3
             - name: Login to azure
             - if: steps.changes.outputs.src == 'true'
@@ -41,4 +41,5 @@ jobs:
             - if: steps.changes.outputs.src == 'true'
               run: terraform plan -input=false -var AzureResumeConnectionString="{{ secrets.TF_VAR_AZURERESUMECONNECTIONSTRING}}"
             - name: Terraform apply
+            - if: steps.changes.outputs.src == 'true'
               run: terraform apply -auto-approve -input=false
