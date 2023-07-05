@@ -12,6 +12,7 @@ permissions:
 
 jobs:
     Terraform:
+        if: github.push == 'terraform/**'
         defaults:
             run:
                 working-directory: ./terraform
