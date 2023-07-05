@@ -54,7 +54,7 @@ resource "azurerm_linux_function_app" "function" {
       python_version = "3.10"
     }
     cors {
-            allowed_origins     = ["https://www.luqmaanrgh.me",] 
+            allowed_origins     = ["https://www.luqmaanrgh.me","https://portal.azure.com"] 
             support_credentials = true
             }
   }
