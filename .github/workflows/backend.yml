@@ -55,9 +55,9 @@ jobs:
               run: terraform apply -auto-approve -input=false
     
     Azure-function:       
-        defaults:
-            run:
-                working-directory: ./backend
+        #defaults:
+         #   run:
+          #      working-directory: ./backend
         env:
             AZURE_FUNCTIONAPP_NAME: 'resumecounterazure'
             AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'
