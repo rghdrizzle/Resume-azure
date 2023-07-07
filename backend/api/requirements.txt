@@ -1,4 +1,4 @@
-# The Python Worker is managed by Azure Functions platform
+
 
 
 azure-functions
