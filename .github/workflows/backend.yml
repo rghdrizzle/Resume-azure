@@ -60,7 +60,7 @@ jobs:
                 working-directory: ./backend/api
         env:
             AZURE_FUNCTIONAPP_NAME: 'resumecounterazure'
-            AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+            AZURE_FUNCTIONAPP_PACKAGE_PATH: './backend/api'
             PYTHON_VERSION: '3.9'
         needs: changes
         if: ${{ needs.changes.outputs.backend == 'true' }}
