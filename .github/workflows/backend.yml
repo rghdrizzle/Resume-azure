@@ -59,7 +59,7 @@ jobs:
          #   run:
           #      working-directory: ./backend
         env:
-            AZURE_FUNCTIONAPP_NAME: 'resumecounterazure'
+            AZURE_FUNCTIONAPP_NAME: 'GetresumeCounter'
             AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'
             PYTHON_VERSION: '3.9'
         needs: changes
