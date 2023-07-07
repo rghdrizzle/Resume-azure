@@ -61,7 +61,7 @@ jobs:
         env:
             AZURE_FUNCTIONAPP_NAME: 'GetresumeCounter'
             AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'
-            PYTHON_VERSION: '3.9'
+            PYTHON_VERSION: '3.10'
         needs: changes
         if: ${{ needs.changes.outputs.backend == 'true' }}
         runs-on: ubuntu-latest
