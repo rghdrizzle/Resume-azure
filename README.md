@@ -24,7 +24,7 @@ This is the result of the staic resume page.
 
 ## Phase-2 (Hosting the website in azure)
 <p>This phase is all about deploying the static site to the cloud. In Azure we can achieve this by deploying the static site to a blob storage. Azure Blob storage has an option to configure it to host static websites. Once configured you can find a container named as $web. Now you can upload the website files directly from the portal or the cli. I personally chose to do it through the cli. The image below shows you the uploaded files for the static site in the blob storage</p>
-![image](https://github.com/rghdrizzle/Resume-azure/assets/92255903/95de4a72-b698-46c4-b4cb-01dfb0749bdd)
+<img src="https://github.com/rghdrizzle/Resume-azure/assets/92255903/95de4a72-b698-46c4-b4cb-01dfb0749bdd">
 And you can access the static website through the primary endpoint given by azure for this particular site. [You can find it in the capabilites section in the overview of the Blob account and click "Static website" and find the primary and secondary endpoints]
 
 ## Phase-3 (Domain and CDN)
