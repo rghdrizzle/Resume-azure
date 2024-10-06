@@ -3,7 +3,7 @@ terraform {
     organization = "rghdrizzle"
 
     workspaces {
-      name = "azureresume"
+      name = "azureresumenew"
     }
   }
   required_providers {
