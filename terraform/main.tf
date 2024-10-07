@@ -1,11 +1,11 @@
 terraform {
-    cloud {
-    organization = "rghdrizzle"
+  #   cloud {
+  #   organization = "rghdrizzle"
 
-    workspaces {
-      name = "azureresumenew"
-    }
-  }
+  #   workspaces {
+  #     name = "azureresumenew"
+  #   }
+  # }
   required_providers {
     
     azurerm = {
@@ -35,6 +35,20 @@ resource "azurerm_storage_account" "functionsa" {
   account_replication_type = "LRS"
   default_to_oauth_authentication   = true
   account_kind        = "Storage"
+}
+resource "azurerm_storage_account" "websa" {
+  name                     = "resumeazureweb"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  account_kind        = "StorageV2"
+  cross_tenant_replication_enabled  = false
+  default_to_oauth_authentication   = false
+  allow_nested_items_to_be_public   = false
+   static_website {
+      index_document = "index.html"
+    }
 }
 
 resource "azurerm_service_plan" "functionserviceplan" {
