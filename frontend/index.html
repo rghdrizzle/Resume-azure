@@ -1,317 +1,266 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Luqmaan Hakeem | Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00aaff;
+      font-family: "Courier New", monospace;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Luqmaan's Resume</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+    /* Glitch text animation */
+    /* Subtle glitch text animation */
+h1, h2, h3, p, li, a {
+  animation: glitch 2s infinite;
+}
 
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+@keyframes glitch {
+  0% { text-shadow: 1px 0 #00ffff, -1px 0 #00ccff; }
+  25% { text-shadow: -1px 1px #00ffff, 1px -1px #00ccff; }
+  50% { text-shadow: 1px 1px #00ffff, -1px -1px #00ccff; }
+  75% { text-shadow: -1px -1px #00ffff, 1px 1px #00ccff; }
+  100% { text-shadow: 1px 0 #00ffff, -1px 0 #00ccff; }
+}
 
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
 
-   <!-- Script
-   ================================================== -->
-   <script src="js/modernizr.js"></script>
-   <script src="main.js"></script>
+    h1, h2, h3 {
+      color: #00ccff;
+      margin-bottom: 10px;
+    }
 
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
+    h1 {
+      font-size: 2em;
+      border-bottom: 1px solid #003355;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
 
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5em;
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    p, li {
+      color: #66ccff;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+
+    .social a {
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      border-top: 1px solid #003355;
+      padding-top: 10px;
+      font-size: 0.9em;
+      color: #0099cc;
+    }
+
+    /* Snowflake style */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: #66ccff;
+      font-size: 10px;
+      z-index: 9999;
+      user-select: none;
+      pointer-events: none;
+      animation-name: fall;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) translateX(0); opacity: 1; }
+      100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
+    }
+
+    /* Sliding counter container */
+.counter-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #001122;
+  color: #00ffff;
+  font-family: "Courier New", monospace;
+  border-bottom: 1px solid #003355;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.counter-text {
+  flex-shrink: 0; /* prevent shrinking */
+  animation: slide 20s linear infinite;
+  white-space: nowrap;
+  padding-left: 100%; /* start offscreen */
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
+  </style>
 </head>
 
 <body>
 
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">Hi, I'm Luqmaan Hakeem aka Rghdrizzle</h1>
-            <p>This page has been viewed <a id="counter"></a> times :) </p> 
-            <ul class="social">
-               <li><a href="https://twitter.com/rghdrizzle"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/luqmaan-hakeem-57964a227/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://github.com/rghdrizzle"><i class="fa fa-github"></i></a></li>
-            </ul>
-         </div>
-      </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/drizzle.png" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>ABOUT ME</h2>
-
-            <p> Hi, I'm Luqmaan Hakeem, I'm a Computer science student, with experience in
-               automation, containerization, CI/CD, Infrastructure
-               provisioning ,DevOps processes and Deep learning. Seeking
-               internship to apply these skills to streamline your
-               software systems and development processes.
-         </br>
-      </br>
-       I built this page as part of the <span><a href="https://cloudresumechallenge.dev/docs/the-challenge/azure/">Cloud Azure Resume Challenge.</a></span>
-            
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- projects
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Projects</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Socka
-                  </h3>
-                  <p>
-                  <li>Full Stack Application + DevOps Implementation
-                     CRUD application themed after the world's best sport
-                     of Football! Application is built with ejs, express, and
-                     MySQL. The Azure based cloud infrastructure is
-                     provisioned automatically using Terraform via
-                     CircleCI pipelines, and the application is deployed to
-                     Azure AKS.</li> 
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Serverless-Resume-API</h3>
-
-                  <p>
-                     <li>
-                        A serverless resume API
-                        which fetches the resume from the blob storage with
-                        devops practices which would involve building an API
-                        without the need for a dedicated server. The API would
-                        be built using serverless technologies as Azure
-                        Functions, and would be deployed using devops
-                        practices such as continuous integration and delivery
-                        (CI/CD) to ensure that the API is always up-to-date and
-                        running smoothly. The Infrastructure is provisioned
-                        using a IaC tool such as Terraform</li>
-                     
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Hemi</h3>
-
-                  <p>
-                  <li>Discord bot built to increase community engagement.
-                     Implements a text based tic-tac-toe game, and
-                     automated data fetching from popular subreddits.
-                     </li>
-               
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Tollbooth-serverless</h3>
-
-                  <p>
-                  <li>Implemented Azure serverless architecture for license plate recognition. 
-                     Vehicle photos triggered Azure Function, extracting data using Cognitive Services OCR. 
-                     Successful processing triggered "savePlateData" Event Grid event, while unsuccessful triggered "queuePlateForManualCheckup". 
-                     Functions stored data in Cosmos DB. Logic App exported new records to CSV in Blob storage, sending email if none. 
-                     Real-time monitoring and scaling achieved using Application Insights.
-                     </li>
-               
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>CurrenSee</h3>
-
-                  <p>
-                  <li>Developed CurrenSee CLI Tool, enabling users to conveniently list currencies, cryptocurrencies, view exchange rates, and perform currency conversions. Empowering frequent travelers, currency traders, and those interested in exchange rates.
-                     </li>
-               
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Work -->
-
-   <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-         <div class="three columns header-col">
-            <h1><span>skills</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Programming Languages</h3>
-                  <p class="info"><em class="date">(Golang, Python,
-                     Javascript, Java ,C ,C++ ,bash,YAML,HCL)</em></p>
-                  <h3>Infrastructure</h3>
-                     <p class="info"><em class="date">(Terraform, Azure,Ansible)</em></p>
-                  <h3>Containers</h3>
-                     <p class="info"><em class="date">(Docker, Kubernetes)</em></p>
-                  <h3>Monitoring</h3>
-                     <p class="info"><em class="date">(Prometheus,Grafana)</em></p>
-                     <h3>Others</h3>
-                     <p class="info"><em class="date">(Git, Data Structures and Algorithms)</em></p>
-
-               </div>
-
-            </div> <!-- item end -->
-         </div> 
-
-         <div class="three columns header-col">
-            <h1><span>Certifications</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Docker essentials by IBM</h3>
-                  <p class="info"><em class="date">April 2022</em></p>
-
-               </div>
-
-            </div> <!-- item end -->
-         </div> 
-      </div>
-   
-
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="https://twitter.com/rghdrizzle"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/luqmaan-hakeem-57964a227/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://github.com/rghdrizzle"><i class="fa fa-github"></i></a></li>
-            </ul>
-
-            <ul class="copyright">
-               <a href="https://www.styleshout.com/free-templates/ceevee/"> Template by CeeVee </a>
-                
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
-      </div>
-
-   </footer> <!-- Footer End-->
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
+  <div class="counter-bar">
+    <div class="counter-text">This page has been viewed <span id="counter">0</span> times :) </div>
+  </div>
+  <script src="main.js"></script>
+
+  <h1>Luqmaan Hakeem aka Rghdrizzle</h1>
+
+  <div class="profile">
+    <img src="images/drizzle.png" alt="Profile picture">
+    <p>
+      Computer Science student experienced in automation, containerization, CI/CD, infrastructure provisioning, DevOps processes, and Deep Learning.  
+      <br><br>
+      Seeking internship to apply these skills to streamline your software systems and development processes.  
+      <br><br>
+      Built as part of the <a href="https://cloudresumechallenge.dev/docs/the-challenge/azure/">Azure Cloud Resume Challenge</a>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+
+    <h3>Socka</h3>
+    <ul>
+      <li>Full Stack Application + DevOps Implementation.</li>
+      <li>CRUD app themed after Football, built with EJS, Express, and MySQL.</li>
+      <li>Azure infrastructure provisioned using Terraform via CircleCI pipelines, deployed to AKS.</li>
+    </ul>
+
+    <h3>Serverless-Resume-API</h3>
+    <ul>
+      <li>Serverless API fetching resumes from Blob Storage using Azure Functions.</li>
+      <li>Provisioned with Terraform, deployed with CI/CD for continuous availability.</li>
+    </ul>
+
+    <h3>Hemi</h3>
+    <ul>
+      <li>Discord bot to increase community engagement.</li>
+      <li>Includes text-based Tic-Tac-Toe and Reddit data automation.</li>
+    </ul>
+
+    <h3>Tollbooth-Serverless</h3>
+    <ul>
+      <li>Azure serverless architecture for license plate recognition.</li>
+      <li>OCR using Cognitive Services, Cosmos DB storage, Logic App exports, and real-time monitoring with App Insights.</li>
+    </ul>
+
+    <h3>CurrenSee</h3>
+    <ul>
+      <li>CLI tool for listing currencies, cryptocurrencies, exchange rates, and conversions.</li>
+      <li>Designed for travelers, traders, and finance enthusiasts.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+
+    <h3>Programming Languages</h3>
+    <p>Golang, Python, JavaScript, Java, C, C++, Bash, YAML, HCL</p>
+
+    <h3>Infrastructure</h3>
+    <p>Terraform, Azure, Ansible</p>
+
+    <h3>Containers</h3>
+    <p>Docker, Kubernetes</p>
+
+    <h3>Monitoring</h3>
+    <p>Prometheus, Grafana</p>
+
+    <h3>Others</h3>
+    <p>Git, Data Structures & Algorithms</p>
+  </div>
+
+  <div class="section">
+    <h2>Certifications</h2>
+    <p><strong>Docker Essentials by IBM</strong> — April 2022</p>
+  </div>
+
+  <div class="section">
+    <h2>Social Links</h2>
+    <div class="social">
+      <a href="https://twitter.com/rghdrizzle">Twitter</a> |
+      <a href="https://www.linkedin.com/in/luqmaan-hakeem-57964a227/">LinkedIn</a> |
+      <a href="https://github.com/rghdrizzle">GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="https://www.styleshout.com/free-templates/ceevee/">Template originally by CeeVee</a></p>
+  </footer>
+
+  <script>
+    const snowCount = 50;
+    for (let i = 0; i < snowCount; i++) {
+      const snow = document.createElement('div');
+      snow.classList.add('snowflake');
+      snow.style.left = Math.random() * window.innerWidth + 'px';
+      snow.style.fontSize = 5 + Math.random() * 15 + 'px';
+      snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+      snow.textContent = '❄';
+      document.body.appendChild(snow);
+    }
+  </script>
 
 </body>
-
 </html>
